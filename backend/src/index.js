@@ -1,6 +1,14 @@
 import express from 'express';
 import cors from 'cors';
 import { v4 as uuidv4 } from 'uuid';
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+// Fix for __dirname and __filename in ESM
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -135,4 +143,10 @@ app.use('*', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`🚀 QuillPad backend running on port ${PORT}`);
+});
+
+// filepath: backend/src/index.js
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
 });

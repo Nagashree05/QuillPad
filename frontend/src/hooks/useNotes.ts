@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Note, CreateNoteRequest, UpdateNoteRequest, ViewType, SortType } from '../types';
 import { toast } from 'react-hot-toast';
+import * as api from "../services/api";
+
 
 const API_BASE = '/api';
 
