@@ -6,9 +6,9 @@ const API = axios.create({
 });
 
 // Example requests
-export const getNotes = () => API.get("/notes");
-export const createNote = (data: any) => API.post("/notes", data);
-export const updateNote = (id: string, data: any) => API.put(`/notes/${id}`, data);
-export const deleteNote = (id: string) => API.delete(`/notes/${id}`);
+export const getNotes = () => API.get("/api/notes");
+export const createNote = (data: any) => API.post("/api/notes", data);
+export const updateNote = (id: string, data: any) => API.put(`/api/notes/${id}`, data);
+export const deleteNote = (id: string) => API.delete(`/api/notes/${id}`);
 
 export default API;
