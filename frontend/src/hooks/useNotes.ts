@@ -4,7 +4,7 @@ import { toast } from 'react-hot-toast';
 
 
 
-const API_BASE = '/api';
+const API_BASE = 'https://quillpad-bcj3.onrender.com/api';
 
 export const useNotes = () => {
   const [notes, setNotes] = useState<Note[]>([]);
