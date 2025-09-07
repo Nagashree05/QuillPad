@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:3001/api", // match your backend route
+  baseURL: "https://quillpad-bcj3.onrender.com/", // match your backend route
 });
 
 // Example requests
