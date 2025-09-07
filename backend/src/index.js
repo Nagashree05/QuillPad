@@ -81,6 +81,7 @@ app.post('/api/notes', (req, res) => {
 
 // Update note
 app.patch('/api/notes/:id', (req, res) => {
+  console.log('Notes:', notes);
   try {
     const noteIndex = notes.findIndex(n => n.id === req.params.id);
     if (noteIndex === -1) {
